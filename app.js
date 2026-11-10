@@ -1,28 +1,28 @@
 const destinations = [
   {
     name: "Goa",
-    tag: "Sun, Sand & Smiles",
+    tag: "Diwali by the Sea",
     cls: "goa",
     image:
       "https://cdn.atrsafari.com/cdn/05explore/locations-and-lodges/asia/india/goa/0/stills/00page/01GOA-IM0001-goa-1920.jpg"
   },
   {
     name: "Manali",
-    tag: "Mountains & Moments",
+    tag: "Diwali in the Mountains",
     cls: "manali",
     image:
       "https://media.assettype.com/deccanherald/2026-05-21/p151a2fl/file85xwfn8ae0hsjayrnui.jpg?ar=40%3A21&auto=format%2Ccompress&mode=crop&ogImage=true&w=1200"
   },
   {
     name: "Jaipur",
-    tag: "Culture & Color",
+    tag: "A Diwali Full of Color",
     cls: "jaipur",
     image:
       "https://www.sundaytour.com.tw/upfiles/chinese/attractions/tw_attractions_caty01594955955.jpg"
   },
   {
     name: "Kerala",
-    tag: "Nature & Togetherness",
+    tag: "A Naturally Bright Diwali",
     cls: "kerala",
     image:
       "https://www.livehindustan.com/web-stories/plan-to-visit-these-places-in-kerala-with-children-_Nv_Y1KFU64s0NPF1La8/assets/2.jpeg"
@@ -116,7 +116,7 @@ if (grid) {
         </h3>
 
         <span class="destination-cta">
-          CHOOSE JOURNEY →
+          CHOOSE BACKDROP →
         </span>
 
       </div>
@@ -208,7 +208,7 @@ async function openCamera(
     console.error(error);
 
     alert(
-      "Please allow camera access to create your memory."
+      "Please allow camera access to capture your Diwali photo."
     );
   }
 }
@@ -817,7 +817,7 @@ async function loadRedBusLogo() {
 }
 
 /* =========================================================
-   FINAL redBus HAPPY FAMILY COLLAGE
+   FINAL redBus DIWALI COLLAGE
    ========================================================= */
 
 async function createCollage(photos) {
@@ -959,7 +959,7 @@ if (logo) {
 
 
 /* =========================================================
-   redBus HAPPY FAMILY 2026
+   redBus DIWALI 2026
    ========================================================= */
 
 ctx.save();
@@ -982,7 +982,7 @@ ctx.fillStyle =
   "rgba(166,47,60,0.30)";
 
 ctx.fillText(
-  "redBus'S HAPPY FAMILY 2026",
+  "HAPPY DIWALI WITH redBus",
   W / 2,
   255
 );
@@ -996,7 +996,7 @@ ctx.fillStyle =
   "#a62f3c";
 
 ctx.fillText(
-  "redBus'S HAPPY FAMILY 2026",
+  "HAPPY DIWALI WITH redBus",
   W / 2,
   248
 );
@@ -1431,7 +1431,7 @@ document
         data;
 
       link.download =
-        "redBus-HAPPY-FAMILY.jpg";
+        "redBus-HAPPY-DIWALI.jpg";
 
       document.body.appendChild(
         link
@@ -1473,7 +1473,7 @@ document
       if (!printWindow) {
 
         alert(
-          "Please allow pop-ups to print your redBus Happy Family photo."
+          "Please allow pop-ups to print your redBus Diwali photo."
         );
 
         return;
@@ -1494,7 +1494,7 @@ document
           <meta charset="UTF-8">
 
           <title>
-            redBus Happy Family
+            redBus Diwali
           </title>
 
           <style>
@@ -1538,7 +1538,7 @@ document
 
           <img
             src="${data}"
-            alt="redBus Happy Family"
+            alt="redBus Diwali"
           >
 
         </body>
