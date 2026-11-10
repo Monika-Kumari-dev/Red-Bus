@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#59252c">
+  <title>redBus Family Day • Create Your Family Journey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#together" aria-label="redBus Home">
+    <img src="redbus-logo.svg" alt="redBus">
+  </a>
+
+  <nav aria-label="Primary navigation">
+    <a href="#people">PEOPLE</a>
+    <i>•</i>
+    <a href="#create">PHOTO BOOTH</a>
+    <i>•</i>
+    <a href="#together">TOGETHER</a>
+  </nav>
+
+  <div class="nav-day">
+    <span class="pulse"></span>
+    FAMILY DAY <b>2026</b>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="together">
+  <div class="sky-glow"></div>
+  <div class="confetti c1">✦</div>
+  <div class="confetti c2">✦</div>
+  <div class="confetti c3">✦</div>
+  <div class="route-line"></div>
+
+  <div class="hero-copy">
+    <div class="day-badge"><span>✦</span> redBus FAMILY DAY <span>✦</span></div>
+    <h1>YOUR FAMILY.<br><em>YOUR JOURNEY.</em></h1>
+    <p>Capture the people who make every journey special.</p>
+    <p class="diwali-wish"><span class="diya" aria-hidden="true"></span>Happy Diwali with redBus<span class="diya" aria-hidden="true"></span></p>
+    <button id="startBtn" class="cta"><span class="camera-icon">⌾</span> CREATE YOUR MEMORY <b>→</b></button>
+    <div class="hero-micro"><span>NO FORMS</span><span>•</span><span>JUST MEMORIES</span></div>
+  </div>
+
+  <div class="scene">
+    <div class="sun"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="mountain m1"></div>
+    <div class="mountain m2"></div>
+    <div class="road"></div>
+    <div class="bus-3d">
+      <div class="bus-top"></div>
+      <div class="bus-window"></div>
+      <div class="bus-logo"><img src="redbus-logo.svg" alt="redBus"></div>
+      <div class="wheel w1"></div>
+      <div class="wheel w2"></div>
+      <div class="headlight"></div>
+    </div>
+    <div class="floating-note">DIFFERENT<br>JOURNEYS<br><strong>ONE FAMILY</strong> ♡</div>
+  </div>
+</section>
+
+<section class="family-day" id="people">
+  <div class="section-tag">PEOPLE • MEMORIES • TOGETHER</div>
+  <h2>THIS FAMILY DAY,<br><span>THE JOURNEY IS YOURS.</span></h2>
+  <p class="lead">A playful redBus photo experience made for the people who turn every trip into a story.</p>
+
+  <div class="experience-card">
+    <div class="card-orbit orbit1"></div>
+    <div class="card-orbit orbit2"></div>
+    <div class="memory-frame">
+      <div class="frame-photo">
+        <div class="fake-family"><span>✦</span><span>♥</span><span>✦</span></div>
+        <small>YOUR FAMILY MEMORY</small>
+      </div>
+      <div class="frame-caption">A MOMENT<br><b>WORTH KEEPING</b></div>
+    </div>
+
+    <div class="card-copy">
+      <div class="mini-kicker">THE redBus MEMORY MACHINE</div>
+      <h3>Pick a place.<br>Strike a pose.<br><span>Make it yours.</span></h3>
+      <div class="tiny-route"><span>GOA</span><i>→</i><span>MANALI</span><i>→</i><span>JAIPUR</span><i>→</i><span>KERALA</span></div>
+      <button class="outline" id="jumpCreate">LET'S MAKE A MEMORY <b>↗</b></button>
+    </div>
+  </div>
+</section>
+
+<section class="create" id="create">
+  <div class="booth-backdrop">
+    <div class="booth-orbit b-orbit1"></div>
+    <div class="booth-orbit b-orbit2"></div>
+    <div class="booth-spark s1">✦</div>
+    <div class="booth-spark s2">✦</div>
+    <div class="booth-spark s3">✦</div>
+    <div class="booth-watermark">redBus</div>
+
+    <div class="create-head">
+      <div class="section-tag">redBus'S FAMILY DAY 2026 • PHOTO BOOTH</div>
+      <div class="booth-title-row">
+        <div>
+          <h2>CHOOSE YOUR<br><span>JOURNEY.</span></h2>
+          <p>Pick a destination and turn your family moment into a redBus keepsake.</p>
+        </div>
+        <div class="booth-badge"><span>✦</span><b>CLICK.</b><small>POSE • CAPTURE • CELEBRATE</small></div>
+      </div>
+    </div>
+
+    <div class="destinations" id="destinations"></div>
+
+    <div class="booth-footer"><span>PEOPLE</span><i>•</i><span>JOURNEYS</span><i>•</i><span>MEMORIES</span><strong>redBus</strong></div>
+  </div>
+
+  <div class="camera-panel hidden" id="cameraPanel">
+    <div class="camera-wrap">
+      <video id="video" autoplay playsinline></video>
+      <div class="camera-guide"><span></span><span></span><span></span><span></span><label>FIT EVERYONE INSIDE</label></div>
+      <button id="capture" class="shutter" aria-label="Capture photo">●</button>
+    </div>
+
+    <div class="camera-controls" id="cameraControls" aria-label="Photo options">
+      <button type="button" id="frontCameraBtn" class="camera-option">📷 FRONT CAMERA</button>
+      <button type="button" id="backCameraBtn" class="camera-option">🔄 BACK CAMERA</button>
+      <button type="button" id="uploadPhotoBtn" class="camera-option">🖼️ UPLOAD PHOTO</button>
+      <input id="photoUpload" type="file" accept="image/*" hidden>
+    </div>
+
+    <div class="capture-side">
+      <div class="section-tag">STEP 02</div>
+      <h3>GET IN FRAME.<br><span>MAKE IT A MEMORY.</span></h3>
+      <p>Allow camera access, gather everyone, then tap the shutter.</p>
+      <button id="backDest" class="outline">← CHANGE DESTINATION</button>
+    </div>
+  </div>
+
+  <canvas id="canvas" hidden></canvas>
+</section>
+
+<section class="final hidden" id="final">
+  <div class="redbus-ad">
+    <div class="ad-brand"><img src="redbus-logo.svg" alt="redBus"><span>FAMILY DAY 2026</span></div>
+    <div class="ad-message">ONE FAMILY.<br><strong>COUNTLESS JOURNEYS.</strong></div>
+    <div class="ad-route"><span>TRAVEL</span><i>✦</i><span>CONNECT</span><i>✦</i><span>CREATE</span></div>
+  </div>
+
+  <div class="final-card">
+    <div class="final-art">
+      <div class="final-sky"></div>
+      <div class="art-glow"></div>
+      <div class="art-watermark">redBus</div>
+      <div class="art-badge">✦ redBus<br><strong>FAMILY DAY</strong><br>2026</div>
+
+      <div class="photo-polaroid">
+        <img id="finalPhoto" class="final-photo" alt="redBus Happy Family memory">
+        <div class="photo-caption">
+          <img src="redbus-logo.svg" alt="redBus">
+          <div><b>FAMILY DAY 2026</b><span><em id="photoDestination">JAIPUR</em> • DIFFERENT JOURNEYS, ONE FAMILY</span></div>
+        </div>
+      </div>
+
+      <div class="final-bus-mini"><span>redBus</span><small>JOURNEYS TOGETHER</small></div>
+      <div class="route-dots"><i></i><b></b><i></i><b></b><i></i></div>
+    </div>
+
+    <div class="final-copy">
+      <div class="section-tag">YOUR MEMORY IS READY</div>
+      <h2>THE JOURNEY<br><span>CONTINUES.</span></h2>
+      <p id="finalText">A redBus Family Day memory, made together.</p>
+      <button id="download" class="cta">SAVE MY MEMORY <b>↓</b></button>
+      <button id="printBtn" class="print-btn">▣ PRINT MY PHOTO <b>→</b></button>
+      <button id="again" class="outline">CREATE ANOTHER</button>
+    </div>
+  </div>
+
+  <div class="print-sheet" id="printSheet">
+    <div class="print-top"><img src="redbus-logo.svg" alt="redBus"><span>FAMILY DAY 2026</span></div>
+    <div class="print-photo-wrap"><img id="printPhoto" src="" alt="Your redBus Family Day memory"><div class="print-stamp">✦<b>redBus</b><small>FAMILY DAY</small></div></div>
+    <div class="print-bottom"><div><strong>DIFFERENT DESTINATIONS.</strong><br>ONE redBus FAMILY.</div><div class="print-destination" id="printDestination">JAIPUR</div><p>PEOPLE • IDEAS • JOURNEYS • A BRIGHTER TOMORROW</p></div>
+  </div>
+</section>
+</main>
+
+<footer><span>PEOPLE • JOURNEYS • TOGETHER</span><b>redBus FAMILY DAY 2026</b></footer>
+
+<script src="app.js"></script>
+</body>
+</html>
