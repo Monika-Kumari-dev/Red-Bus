@@ -25,7 +25,7 @@ const destinations = [
     tag: "A Naturally Bright Diwali",
     cls: "kerala",
     image:
-      "https://www.livehindustan.com/web-stories/plan-to-visit-these-places-in-kerala-with-children-_Nv_Y1KFU64s0NPF1La8/assets/2.jpeg"
+      "./assets/kerala-backwaters.png"
   }
 ];
 
@@ -1448,121 +1448,35 @@ document
    PRINT — EXACT 4 × 6 INCH
    ========================================================= */
 
-document
-  .querySelector("#printBtn")
-  ?.addEventListener(
-    "click",
-    async () => {
+document.querySelector("#printBtn")?.addEventListener("click", async () => {
+  const button = document.querySelector("#printBtn");
+  if (!capturedPhotos.length || !printPhoto || button.disabled) return;
 
-      const data =
-        await createCollage(
-          capturedPhotos
-        );
+  button.disabled = true;
+  try {
+    // Print the same completed collage that is shown in the preview.
+    const data = finalPhoto?.getAttribute("src") || await createCollage(capturedPhotos);
+    if (!data) throw new Error("No photo is available to print.");
 
-      if (!data) return;
-
-
-      const printWindow =
-        window.open(
-          "",
-          "_blank",
-          "width=450,height=700"
-        );
-
-
-      if (!printWindow) {
-
-        alert(
-          "Please allow pop-ups to print your redBus Diwali photo."
-        );
-
-        return;
-      }
-
-
-      printWindow.document.open();
-
-
-      printWindow.document.write(`
-
-        <!doctype html>
-
-        <html>
-
-        <head>
-
-          <meta charset="UTF-8">
-
-          <title>
-            redBus Diwali
-          </title>
-
-          <style>
-
-            @page {
-              size: 4in 6in;
-              margin: 0;
-            }
-
-            html,
-            body {
-
-              width: 4in;
-              height: 6in;
-
-              margin: 0;
-              padding: 0;
-
-              overflow: hidden;
-
-              background: #fff;
-            }
-
-            img {
-
-              display: block;
-
-              width: 4in;
-              height: 6in;
-
-              object-fit: contain;
-
-              object-position: center;
-            }
-
-          </style>
-
-        </head>
-
-        <body>
-
-          <img
-            src="${data}"
-            alt="redBus Diwali"
-          >
-
-        </body>
-
-        </html>
-
-      `);
-
-
-      printWindow.document.close();
-
-
-      setTimeout(
-        () => {
-
-          printWindow.focus();
-
-          printWindow.print();
-
-        },
-        500
-      );
-    }
-  );
+    await new Promise((resolve, reject) => {
+      printPhoto.onload = resolve;
+      printPhoto.onerror = () => reject(new Error("The print image could not be loaded."));
+      printPhoto.src = data;
+      if (printPhoto.complete && printPhoto.naturalWidth > 0) resolve();
+    });
+    if (printPhoto.decode) await printPhoto.decode();
+    // Allow layout to finish before the browser captures the print document.
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    window.print();
+  } catch (error) {
+    console.error("Photo printing failed:", error);
+    alert("Your photo could not be prepared for printing. Please try again.");
+  } finally {
+    printPhoto.onload = null;
+    printPhoto.onerror = null;
+    button.disabled = false;
+  }
+});
 
 
 /* =========================================================
